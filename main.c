@@ -94,7 +94,7 @@ read_to_first_identifier()
 	push(this);
     } while (this.type != IDENTIFIER);
 
-    printf("%s is a ", this.string);
+    printf("%s is ", this.string);
     pop;
 
     get_token();
