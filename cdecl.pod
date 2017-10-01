@@ -1,0 +1,94 @@
+=head1 NAME
+
+B<cdecl> -- Translate C declarations to English
+
+=head1 SYNOPSIS
+
+B<cdecl>
+
+=head1 DESCRIPTION
+
+B<cdecl> reads a C declaration from its input and translates it to English
+terms which are sent as output.
+
+This program was written following the recommendations and algorithm given by
+Peter van der Linden on his book "Expert C Programming - Deep C Secrets". It
+was given as a programming challenge in chapter 3.
+
+There have been many C<cdecl> versions written along history. This one in
+particular -- although very simple -- has an easy to understand parsing algorithm
+and is relatively complete. Recognized types include:
+
+    void
+    char
+    short
+    int
+    long
+    signed
+    unsigned
+    float
+    double
+    struct
+    union
+    enum
+
+And the following language features:
+
+=over 6
+
+=item - I<Arrays>
+
+Interpreted with or without any size.
+
+=item - I<Functions>
+
+Interpreted with arguments ignored.
+
+=item - I<Qualifiers>
+
+Both C<volatite> and C<const> (which is translated as I<readonly>)
+
+=item - I<Pointers>
+
+=back
+
+=head1 EXAMPLES
+
+Calling the program and writing the declaration followed by a new line will
+produce, for example:
+
+    $ cdecl
+    int * const n
+    n is readonly pointer to int
+
+    $ cdecl
+    char *f()
+    f is function returning pointer to char
+
+    $ cdecl
+    long *(*(*x)[10])()
+    x is pointer to array size 10 of pointer to function returning pointer to long
+
+=head1 CAVEATS
+
+Due to the way it is constructed, this version of C<cdecl> won't produce any
+warning or error if bad syntax is encountered. There are no checks for invalid
+constructs either, such as an array of functions.
+
+The goal (as described in the book) was not to build a complete parser but
+rather an implement and practice an easy algorithm.
+
+=head1 AUTHORS & HISTORY
+
+This software and manual were written by Cesar Tessarin originally on July 5th
+2011, rewritten partially and updated on Oct. 2017. However, all credit of the
+internal algorithm and design goes to Peter van der Linden since (as stated
+above) this was an exercise from his book:
+
+B<Expert C Programming - Deep C Secrets>, 1st edition
+
+Peter van der Linden
+(C) 1994 Sun Microsystems, Inc.
+ISBN:978-0-131-77429-2
+
+=cut
