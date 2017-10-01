@@ -11,9 +11,9 @@ B<cdecl>
 B<cdecl> reads a C declaration from its input and translates it to English
 terms which are sent as output.
 
-This program was written following the recommendations and algorithm given by
-Peter van der Linden on his book "Expert C Programming - Deep C Secrets". It
-was given as a programming challenge in chapter 3.
+This program was written following the recommendations and algorithm presented
+by Peter van der Linden on his book "Expert C Programming - Deep C Secrets".
+Writing this program was a programming challenge given in Chapter 3.
 
 There have been many C<cdecl> versions written along history. This one in
 particular -- although very simple -- has an easy to understand parsing algorithm
@@ -76,7 +76,7 @@ warning or error if bad syntax is encountered. There are no checks for invalid
 constructs either, such as an array of functions.
 
 The goal (as described in the book) was not to build a complete parser but
-rather an implement and practice an easy algorithm.
+rather implement and practice an easy algorithm.
 
 =head1 AUTHORS & HISTORY
 
