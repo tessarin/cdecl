@@ -65,7 +65,9 @@ get_token()
     char *str = this.string;
 
     /* discard whitespace */
-    while (isspace(*str = getchar())) ;
+    do {
+	*str = getchar();
+    } while (*str == ' ' || *str == '\t');
 
     if (isalnum(*str)) {
 	/* read the rest */
@@ -130,6 +132,7 @@ deal_with_arrays()
     get_token();
 }
 
+/* prints pointers on stack, if any */
 void
 deal_with_pointers()
 {
@@ -148,10 +151,9 @@ deal_with_declarator()
     if (this.type == '(')
 	deal_with_function_args();
 
-    deal_with_pointers();
-
     /* while there is content on the stack */
     while (stack_index >= 0) {
+	deal_with_pointers();
 	if (current.type == '(') {
 	    /* simple parenthesis */
 	    pop;
@@ -166,5 +168,10 @@ deal_with_declarator()
 int
 main(int argc, char **argv)
 {
+    read_to_first_identifier();
+    deal_with_declarator();
+
+    printf("\n");
+
     return 0;
 }
