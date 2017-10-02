@@ -50,10 +50,10 @@ program check the [manual][man].
 
 ---
 
-<sup>[1]</sup>**Expert C Programming - Deep C Secrets**, 1st edition  
-  Peter van der Linden  
-  © 1994 Sun Microsystems, Inc.  
-  ISBN 978-0-131-77429-2
+<sup>[1]</sup> **Expert C Programming - Deep C Secrets**, 1st edition  
+  Peter van der Linden  
+  © 1994 Sun Microsystems, Inc.  
+  ISBN 978-0-131-77429-2
 
  [brw]: https://brew.sh
  [man]: cdecl.pod
