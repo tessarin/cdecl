@@ -67,7 +67,7 @@ produce, for example:
 
     $ cdecl
     long *(*(*x)[10])()
-    x is pointer to array size 10 of pointer to function returning pointer to long
+    x is pointer to array with size 10 of pointer to function returning pointer to long
 
 =head1 CAVEATS
 

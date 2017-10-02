@@ -124,7 +124,7 @@ deal_with_arrays()
 
     /* print size if given */
     if (isdigit(*this.string)) {
-	printf("size %s ", this.string);
+	printf("with size %s ", this.string);
 	get_token(); /* read `]` */
     }
 
